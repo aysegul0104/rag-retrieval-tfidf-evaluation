@@ -1,0 +1,21 @@
+{
+  "tests": 13,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "status": "passed",
+  "python": "3.13.16",
+  "isolation": "separate_uid_seccomp_no_network_resource_limits_not_container",
+  "source_sha256": {
+    "main.py": "f7ffffb2b4c6a24fdfb43d6965c66cf26e3bbede1411fae2174bd33c81136d44",
+    "test_contract.py": "a01b4c343204cec27ce4a9d92bf2a030be1432f03279d697b4027a945d9b6540",
+    "requirements.txt": "dccd3188aea85a7dfe1e0b00c33c446b0999d6c46cdc78ec28ad3c8368fb62f9",
+    ".gitignore": "95e5b9881836504ef66f4e94b5cec34cb1a72758153dc28844d1bbe167b32a0f",
+    "data.py": "259dfb290354d0be5de7c692204e120e0042c85d0eb690c94bb138c729074adf",
+    "app.py": "8c49374bf90bf4f79d75175d625908705d9b78fe7cf92f6cd570708f7a32eb58",
+    "test_project.py": "e43c9361e79727299e62d9897a0a2419668c20e009e2ac1bf31637eda949cca9"
+  },
+  "test_output": ".............                                                            [100%]\n-------- generated xml file: /tmp/qwen-check-7tsxk2ot/output/junit.xml ---------\n13 passed in 2.91s\n",
+  "demo_output": "{\n  \"n_samples\": 256,\n  \"metrics\": {\n    \"recall_at_k\": 0.15625,\n    \"mrr\": 0.06566220238095238\n  },\n  \"baseline_metrics\": {\n    \"recall_at_k\": 0.1875,\n    \"mrr\": 0.07273065476190477\n  },\n  \"explanation\": \"TF-IDF retrieval with k=7 selected on dev set (MRR=0.0955). Test set: algorithm Recall@7=0.1562, MRR=0.0657; baseline Recall@7=0.1875, MRR=0.0727. Observed MRR difference (TF-IDF minus baseline): -0.007068. A negative difference favors the baseline. IDF does not guarantee improvement. Labels identify one sampled document, although other same-topic documents may also be relevant. Scores measure recovery of that sampled label, not complete relevance.\"\n}\n",
+  "seed": 42
+}

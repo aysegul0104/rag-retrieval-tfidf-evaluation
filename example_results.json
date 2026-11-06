@@ -1,0 +1,12 @@
+{
+  "n_samples": 256,
+  "metrics": {
+    "recall_at_k": 0.15625,
+    "mrr": 0.06566220238095238
+  },
+  "baseline_metrics": {
+    "recall_at_k": 0.1875,
+    "mrr": 0.07273065476190477
+  },
+  "explanation": "TF-IDF retrieval with k=7 selected on dev set (MRR=0.0955). Test set: algorithm Recall@7=0.1562, MRR=0.0657; baseline Recall@7=0.1875, MRR=0.0727. Observed MRR difference (TF-IDF minus baseline): -0.007068. A negative difference favors the baseline. IDF does not guarantee improvement. Labels identify one sampled document, although other same-topic documents may also be relevant. Scores measure recovery of that sampled label, not complete relevance."
+}

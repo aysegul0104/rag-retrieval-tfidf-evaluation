@@ -1,0 +1,16 @@
+{
+  "slug": "rag-retrieval-tfidf-evaluation",
+  "title": "RAG Context Retrieval: TF-IDF vs Term-Frequency Baseline",
+  "description": "Evaluates TF-IDF cosine-similarity retrieval against a raw term-frequency baseline for RAG context selection on a seeded synthetic corpus, reporting Recall@k and MRR with a dev/test query split.",
+  "novelty": "No previous project in history; this is a focused, deterministic retrieval-quality benchmark that isolates the IDF weighting contribution in a RAG pre-retrieval stage without any LLM or embedding model.",
+  "method": "Generate 200 seeded synthetic documents with controlled topic overlap. Create n_samples queries, each relevant to one ground-truth document. Split queries 75/25 into dev and test. Algorithm: TfidfVectorizer fitted on corpus + cosine_similarity, retrieve top-k per query. Baseline: CountVectorizer (no IDF) + cosine_similarity, same retrieval. Dev split selects optimal k in {3,5,7} by MRR; test reports final Recall@k and MRR. Both metrics are in [0,1], higher is better. No LLM is invoked; all scoring is statistical.",
+  "dependencies": [
+    "numpy",
+    "scikit-learn"
+  ],
+  "acceptance_tests": [
+    "Different seeds produce different query arrays in make_dataset",
+    "n_samples < 32 raises ValueError from make_dataset",
+    "Ranking and Recall@k/MRR match known fixtures and independently recomputed experiment results"
+  ]
+}

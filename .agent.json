@@ -1,0 +1,10 @@
+{
+  "generator": "project-bundle-v2",
+  "status": "validated",
+  "date": "2026-11-06",
+  "slug": "rag-retrieval-tfidf-evaluation",
+  "description": "Evaluates TF-IDF cosine-similarity retrieval against a raw term-frequency baseline for RAG context selection on a seeded synthetic corpus, reporting Recall@k and MRR with a dev/test query split.",
+  "method": "Generate 200 seeded synthetic documents with controlled topic overlap. Create n_samples queries, each relevant to one ground-truth document. Split queries 75/25 into dev and test. Algorithm: TfidfVectorizer fitted on corpus + cosine_similarity, retrieve top-k per query. Baseline: CountVectorizer (no IDF) + cosine_similarity, same retrieval. Dev split selects optimal k in {3,5,7} by MRR; test reports final Recall@k and MRR. Both metrics are in [0,1], higher is better. No LLM is invoked; all scoring is statistical.",
+  "category": "LLM development: offline retrieval, RAG retrieval evaluation or prompt evaluation",
+  "bundle_sha256": "e6c0980ad9669d60138298b0bc116e664c323ade80c295dd74a77c8c6b12aa9a"
+}
